@@ -1,0 +1,23 @@
+name: actions
+
+on: 
+  push:
+
+jobs:
+  test-actions:
+    name: test actions
+    runs-on: ubuntu-latest
+    steps:
+      - name: list files
+        run: ls
+      - name: checkour repo
+        uses: actions/checkout@v4.2.2
+      - name: ls
+        run: ls
+      - name: hello-world
+        id: print-hello-world
+        uses: actions/hello-world-javascript-action@main
+        with:
+          who-to-greet: "Alijon"
+      - name: time
+        run: echo "'greeting time:' ${{ steps.print-hello-world.outputs.time }}"
