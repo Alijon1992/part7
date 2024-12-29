@@ -21,8 +21,8 @@ jobs:
           who-to-greet: "Alijon"
       - name: time
         run: echo "'greeting time:' ${{ steps.print-hello-world.outputs.time }}"
-      # - name: docker action
-      #   uses: docker://hello-world:latest
+      - name: docker action
+        uses: docker://hello-world:latest
       - name: Hello world action step
         id: hello
         uses: actions/hello-world-docker-action@v2
